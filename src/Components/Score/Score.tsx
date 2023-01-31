@@ -1,17 +1,22 @@
 import React from "react";
 import "./Score.scss";
 
-function Score() {
+type ScoreContnet = {
+  choises: Array<string>;
+  score: number;
+};
+
+function Score({ choises, score }: ScoreContnet) {
   return (
     <div className="Score">
       <div className="Score__Name">
-        <p>Rock</p>
-        <p>Paper</p>
-        <p>Scissors</p>
+        {choises.map((item) => (
+          <p>{item}</p>
+        ))}
       </div>
       <div className="Score__Result">
         <p>Score</p>
-        <h2>12</h2>
+        <h2>{score}</h2>
       </div>
     </div>
   );

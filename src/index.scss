@@ -48,13 +48,16 @@ html {
 
   --PrimaryFont: "Barlow Semi Condensed";
   font-size: 62.5%;
+  @media screen and (max-width: 900px) {
+    font-size: 50%;
+  }
 }
 
 body {
   background-image: var(--BackgroundGradient);
   width: 100vw;
   height: 100vh;
-  padding: 5rem;
+  padding: 2rem;
 
   font-family: var(--PrimaryFont);
   font-weight: 600;

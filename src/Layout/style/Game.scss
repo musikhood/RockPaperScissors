@@ -6,7 +6,7 @@
   &__Game {
     // background-color: green;
     margin: 0 auto;
-    width: 25rem;
+    width: 22rem;
     position: relative;
   }
   &__imgWrapper {
@@ -95,8 +95,8 @@
   position: fixed;
   z-index: 10;
   bottom: 0;
-  right: 5rem;
-  bottom: 5rem;
+  right: 2rem;
+  bottom: 2rem;
   color: var(--WhiteColor);
   text-transform: uppercase;
   letter-spacing: 3px;
@@ -106,9 +106,16 @@
   cursor: pointer;
   overflow: hidden;
   transition: color 0.2s ease-in-out;
+  @media screen and (max-width: 450px) {
+    bottom: 8rem;
+  }
 
   &--2 {
     right: 22rem;
+    @media screen and (max-width: 450px) {
+      right: 2rem;
+      bottom: 2rem;
+    }
     padding: 0;
     a {
       text-decoration: none;

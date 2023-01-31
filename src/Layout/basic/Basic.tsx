@@ -1,16 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../style/Game.scss";
-import { Score } from "../../Components";
+import { Score, Rules } from "../../Components";
+
 import bg from "../../img/bg-triangle.svg";
 import paper from "../../img/icon-paper.svg";
 import rock from "../../img/icon-rock.svg";
 import scissors from "../../img/icon-scissors.svg";
+import rules from "../../img/image-rules.svg";
 
 function Basic() {
+  const [rulesOpen, setRulesOpen] = useState(false);
+  const [score, setScore] = useState(0);
   return (
     <div className="Basic">
-      <Score />
+      <Score choises={["Rock", "Paper", "Scissors"]} score={score} />
       <div className="Basic__Game">
         <div className="Circle Circle--1 Circle--Paper">
           <div className="Circle__imgWrapper">
@@ -31,10 +35,18 @@ function Basic() {
           <img src={bg} alt="bg" />
         </div>
       </div>
-      <div className="Button">Rules</div>
+      <div
+        className="Button"
+        onClick={() => {
+          setRulesOpen(true);
+        }}
+      >
+        Rules
+      </div>
       <div className="Button Button--2">
         <Link to="/extra">Change Game Mode </Link>
       </div>
+      <Rules image={rules} rules={rulesOpen} setRules={setRulesOpen} />
     </div>
   );
 }
