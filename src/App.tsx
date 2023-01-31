@@ -10,8 +10,6 @@ function App() {
         <Route path="/" element={<Basic />} />
         <Route path="/extra" element={<Extra />} />
       </Routes>
-      {/* <Link to="/">basic</Link>
-      <Link to="/extra">extra</Link> */}
     </div>
   );
 }

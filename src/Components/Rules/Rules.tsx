@@ -3,9 +3,9 @@ import "./Rules.scss";
 import iconClose from "../../img/icon-close.svg";
 
 type Rul = {
-  image: any;
-  rules: any;
-  setRules: any;
+  image: string;
+  rules: boolean;
+  setRules: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 function Rules({ image, rules, setRules }: Rul) {

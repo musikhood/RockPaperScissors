@@ -9,9 +9,13 @@ type ScoreContnet = {
 function Score({ choises, score }: ScoreContnet) {
   return (
     <div className="Score">
-      <div className="Score__Name">
-        {choises.map((item) => (
-          <p>{item}</p>
+      <div
+        className={
+          choises.length > 3 ? "Score__Name Score__Name--longer" : "Score__Name"
+        }
+      >
+        {choises.map((item, index) => (
+          <p key={index}>{item}</p>
         ))}
       </div>
       <div className="Score__Result">

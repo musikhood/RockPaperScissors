@@ -11,7 +11,7 @@
   }
   &__bg {
     width: 100vw;
-    height: 100vw;
+    height: 100vh;
     background-color: rgba(0, 0, 0, 0.5);
   }
   &__Close {
@@ -19,6 +19,16 @@
     top: 4rem;
     right: 4rem;
     cursor: pointer;
+    @media screen and (max-width: 600px) {
+      top: auto;
+      bottom: 4rem;
+      right: 50%;
+      transform: translateX(50%);
+      width: 4rem;
+      img {
+        width: 100%;
+      }
+    }
   }
   &__Modal {
     position: absolute;
@@ -29,6 +39,14 @@
     background-color: var(--WhiteColor);
     padding: 4rem;
     border-radius: 10px;
+    @media screen and (max-width: 600px) {
+      width: 100vw;
+      height: 100vh;
+      border-radius: 0;
+      h2 {
+        text-align: center;
+      }
+    }
     h2 {
       text-transform: uppercase;
       font-size: 3.2rem;
@@ -38,6 +56,16 @@
   &__imgWrapper {
     width: 100%;
     padding-top: 40px;
+    @media screen and (max-width: 600px) {
+      width: 45rem;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    @media screen and (max-width: 500px) {
+      width: 40rem;
+    }
     img {
       width: 100%;
     }

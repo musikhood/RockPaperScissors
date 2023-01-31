@@ -20,6 +20,18 @@
         font-size: 3.2rem;
       }
     }
+    &--longer {
+      line-height: 2.4rem;
+      @media screen and (max-width: 450px) {
+        line-height: 1.9rem;
+      }
+      p {
+        font-size: 2.8rem;
+        @media screen and (max-width: 450px) {
+          font-size: 2rem;
+        }
+      }
+    }
   }
   &__Result {
     background-color: var(--WhiteColor);
