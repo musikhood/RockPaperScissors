@@ -48,8 +48,14 @@ html {
 
   --PrimaryFont: "Barlow Semi Condensed";
   font-size: 62.5%;
-  @media screen and (max-width: 900px) {
+  @media (max-width: 900px) {
     font-size: 50%;
+  }
+  @media (max-height: 650px) {
+    font-size: 45%;
+  }
+  @media (max-height: 550px) {
+    font-size: 35%;
   }
 }
 
@@ -58,6 +64,7 @@ body {
   width: 100vw;
   height: 100vh;
   padding: 2rem;
+  overflow: hidden;
 
   font-family: var(--PrimaryFont);
   font-weight: 600;
