@@ -1,12 +1,14 @@
 import React from "react";
 import "./Score.scss";
+import reset from "../../img/reset.svg";
 
 type ScoreContnet = {
   choises: Array<string>;
   score: number;
+  resetScore: React.Dispatch<React.SetStateAction<number>>;
 };
 
-function Score({ choises, score }: ScoreContnet) {
+function Score({ choises, score, resetScore }: ScoreContnet) {
   return (
     <div className="Score">
       <div
@@ -21,6 +23,9 @@ function Score({ choises, score }: ScoreContnet) {
       <div className="Score__Result">
         <p>Score</p>
         <h2>{score}</h2>
+        <div className="Score__reset" onClick={() => resetScore(0)}>
+          <img src={reset} alt="reset" />
+        </div>
       </div>
     </div>
   );

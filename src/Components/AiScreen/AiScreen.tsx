@@ -5,6 +5,7 @@ import rock from "../../img/icon-rock.svg";
 import scissors from "../../img/icon-scissors.svg";
 import lizard from "../../img/icon-lizard.svg";
 import spock from "../../img/icon-spock.svg";
+import ConfettiExplosion from "react-confetti-explosion";
 
 type AiScreenItems = {
   setPlayerChoosed: React.Dispatch<React.SetStateAction<boolean>>;
@@ -27,6 +28,7 @@ function AiScreen({
   const [computerItem, setComputerItem] = useState("");
   const [computerItemImage, setComputerItemImage] = useState("");
   const [message, setMessage] = useState("");
+  const [isExploding, setIsExploding] = useState(false);
   function ComputerChoose() {
     let index;
     if (extraMode) {
@@ -104,10 +106,11 @@ function AiScreen({
       setMessage(mess);
       if (mess === "You Won") {
         setScore((prevState) => (prevState += 1));
+        setIsExploding(true);
       } else if (mess === "You Lost" && score > 0) {
         setScore((prevState) => (prevState -= 1));
       }
-    }, 2000);
+    }, 1000);
   }
   function PlayAgain() {
     setPlayerChoosed(false);
@@ -123,6 +126,14 @@ function AiScreen({
     CheckWinner();
   }, [computerItem]);
 
+  const MediumExplosion = {
+    force: 0.6,
+    duration: 5000,
+    particleCount: 200,
+    height: 1600,
+    width: 1600,
+  };
+
   return (
     <div className="AiScreen">
       <div className="AiScreen__Section">
@@ -130,6 +141,7 @@ function AiScreen({
         <div className={`CircleAi CircleAi--${playerItem}`}>
           <div className="Circle__imgWrapper">
             <img src={playerItemImage} alt="playerItem" />
+            {isExploding && <ConfettiExplosion {...MediumExplosion} />}
           </div>
         </div>
       </div>

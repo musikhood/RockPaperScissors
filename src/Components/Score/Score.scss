@@ -41,7 +41,7 @@
     border-radius: 10px;
     text-align: center;
     text-transform: uppercase;
-
+    position: relative;
     p {
       color: var(--ScoreText);
       font-weight: 700;
@@ -53,6 +53,25 @@
       @media screen and (max-width: 450px) {
         font-size: 4.8rem;
       }
+    }
+  }
+  &__reset {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-5px);
+    width: 4rem;
+    height: 4rem;
+    background-color: var(--ScoreText);
+    border-radius: 50%;
+    padding: 0.5rem;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+    img {
+      width: 100%;
+    }
+    &:hover {
+      opacity: 0.7;
     }
   }
 }

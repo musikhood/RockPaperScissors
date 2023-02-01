@@ -31,7 +31,11 @@ function Basic() {
   }, [score]);
   return (
     <div className="Basic">
-      <Score choises={["Rock", "Paper", "Scissors"]} score={score} />
+      <Score
+        choises={["Rock", "Paper", "Scissors"]}
+        score={score}
+        resetScore={setScore}
+      />
       {playerChoosed ? (
         <AiScreen
           setPlayerChoosed={setPlayerChoosed}

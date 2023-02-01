@@ -37,6 +37,7 @@ function Extra() {
       <Score
         choises={["Rock", "Paper", "Scissors", "Lizard", "Spock"]}
         score={score}
+        resetScore={setScore}
       />
       {playerChoosed ? (
         <AiScreen
